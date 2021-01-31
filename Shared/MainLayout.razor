@@ -1,0 +1,13 @@
+@inherits LayoutComponentBase
+
+<div class="main @($"{_uniqueNamespace}-{_themeClassName}")">
+    <select @onchange="((e) => SetSelectedThemeKey(e.Value.ToString()))">
+        @foreach(var themeKey in _themeKeys)
+        {
+            <option selected="@(_selectedThemeKey == themeKey)">
+                @themeKey
+            </option>
+        }
+    </select>
+    @Body
+</div>

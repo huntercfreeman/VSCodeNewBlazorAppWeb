@@ -1,0 +1,33 @@
+:root {
+    --background-color-primary: black;
+    --background-color-secondary: #3c3c3c;
+    --font-color-primary: white;
+    --font-color-danger: red;
+}
+
+.bex-dark_mode {
+    --background-color: black;
+    --background-color-secondary: #3c3c3c;
+    --font-color-primary: white;
+    --font-color-danger: red;
+}
+
+.bex-light_mode {
+    --background-color: white;
+    --background-color-secondary: white;
+    --font-color-primary: black;
+    --font-color-danger: red;
+}
+
+div.main {
+    background-color: var(--background-color-primary);
+    color: var(--font-color-primary);
+}
+
+div.card {
+    background-color: var(--background-color-secondary);
+}
+
+.validation-message {
+    color: var(--font-color-danger);
+}

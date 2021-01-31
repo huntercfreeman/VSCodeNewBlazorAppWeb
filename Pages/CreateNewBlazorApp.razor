@@ -1,0 +1,36 @@
+@page "/"
+
+<div style="margin-left: 20px; margin-right: 20px; margin-top: 10px; margin-bottom: 10px;" 
+     class="card">
+    <h5 class="card-header">Configure your new project</h5>
+    <div class="card-body">
+        <h5 class="card-title">Blazor App</h5>
+        <EditForm EditContext="_newBlazorAppContext"
+                  OnValidSubmit="OnValidSubmit">
+            <DataAnnotationsValidator/>
+            <ValidationMessage For="(() => _newBlazorApp.ProjectName)"/>
+            <div class="form-group">
+                <label for="projectName">Project name</label>
+                <InputText id="projectName" @bind-Value="_newBlazorApp.ProjectName" />
+            </div>
+            <ValidationMessage For="(() => _newBlazorApp.Location)"/>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <InputText id="location" @bind-Value="_newBlazorApp.Location" />
+            </div>
+            <ValidationMessage For="(() => _newBlazorApp.SolutionName)"/>
+            <div class="form-group">
+                <label for="solutionName">Solution name</label>
+                <InputText id="solutionName" @bind-Value="_newBlazorApp.SolutionName" />
+            </div>
+            <ValidationMessage For="(() => _newBlazorApp.SolutionProjectSameDirectory)"/>
+            <div class="form-group">
+                <label for="solutionProjectSameDirectory">
+                    Place solution and project in the same directory
+                </label>
+                <InputCheckbox id="solutionProjectSameDirectory" @bind-Value="_newBlazorApp.SolutionProjectSameDirectory" />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </EditForm>
+    </div>
+</div>
